@@ -1,0 +1,108 @@
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+
+:root {
+    font-size: 16px;
+    font-family: "3270SemiNarrow Nerd Font Mono";
+}
+
+body {
+    color: $nord6;
+    background-color: $nord0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar {
+    position: fixed;
+    height: 100vh;
+    width: 5rem;
+    background-color: $nord3;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+    transition: 200ms ease;
+
+    &:hover {
+        width: 12rem;
+
+        .navbar-text {
+            display: inline;
+            transition: opacity 200ms;
+        }
+    }
+}
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-item {
+    width: 100%;
+
+    &:last-child {
+        margin-top: auto;
+    }
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: $nord5;
+    display: flex;
+    align-items: center;
+    height: 4.5rem;
+    width: 100%;
+
+    img {
+        height: 3rem;
+        margin-left: 0.95rem;
+    }
+
+    &:hover {
+        background-color: $nord4;
+        color: $nord0;
+    }
+}
+
+.navbar-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.logo {
+    background-color: $nord1;
+
+    &:hover {
+        background-color: $nord10;
+    }
+}
+
+.text-box {
+    background-color: $nord1;
+    border-radius: 10px;
+    padding: 0.1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
