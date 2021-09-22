@@ -1,3 +1,7 @@
+// @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 $nord0: #2e3440;
 $nord1: #3b4252;
 $nord2: #434c5e;
@@ -17,12 +21,21 @@ $nord15: #b48ead;
 
 :root {
     font-size: 16px;
-    font-family: "3270SemiNarrow Nerd Font Mono";
+    // font-family: "3270SemiNarrow Nerd Font Mono";
+    // font-family: 'Source Sans Pro', sans-serif;
+    // font-family: 'Titillium Web', sans-serif;
+    // font-family: 'Arvo', serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 3.5rem 0 0 0;   /*Lock the scroll a bit over the anchor*/
 }
 
 body {
-    color: $nord6;
     background-color: $nord0;
+    color: $nord6;
     margin: 0;
     padding: 0;
 }
@@ -32,20 +45,25 @@ main {
     padding: 1rem;
 }
 
+h1, h2 {
+    margin: 0.5rem;
+    // text-align: center;
+}
+
 .navbar {
-    position: fixed;
-    height: 100vh;
-    width: 5rem;
     background-color: $nord3;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 5rem;
     transition: 200ms ease;
 
     &:hover {
-        width: 12rem;
+        width: 16rem;
 
         .navbar-text {
             display: inline;
-            transition: opacity 200ms;
         }
     }
 }
@@ -76,7 +94,7 @@ main {
     height: 4.5rem;
     width: 100%;
 
-    img {
+    .distro-img {
         height: 3rem;
         margin-left: 0.95rem;
     }
@@ -103,6 +121,7 @@ main {
 .text-box {
     background-color: $nord1;
     border-radius: 10px;
+    margin: 1rem;
     padding: 0.1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
 }
