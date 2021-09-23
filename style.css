@@ -43,6 +43,7 @@ h1, h2 {
 }
 
 .navbar:hover .navbar-list {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 

@@ -64,6 +64,7 @@ h1, h2 {
         width: 16rem;
         
         .navbar-list {
+            overflow-x: hidden;
             overflow-y: scroll;
         }
 
