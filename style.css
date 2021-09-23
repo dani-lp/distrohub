@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #2e3440;
+  background-color: #242933;
   color: #eceff4;
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ h1, h2 {
 }
 
 .navbar {
-  background-color: #4c566a;
+  background-color: #3b4252;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
   position: fixed;
@@ -101,8 +101,12 @@ h1, h2 {
 }
 
 .navbar-link:hover {
-  background-color: #d8dee9;
-  color: #2e3440;
+  background-color: #434c5e;
+  border-left: 3px solid #88c0d0;
+}
+
+.navbar-link:hover .distro-img {
+  margin-left: calc(0.95rem - 3px);
 }
 
 .navbar-text {
@@ -111,11 +115,14 @@ h1, h2 {
 }
 
 .logo {
-  background-color: #3b4252;
+  background-color: #4c566a;
 }
 
-.logo:hover {
-  background-color: #5e81ac;
+.logo-link:hover {
+  background-color: #4c566a;
+  border: none;
+  margin-left: 3px;
+  width: calc(100% - 3px);
 }
 
 .text-box {

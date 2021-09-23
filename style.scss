@@ -2,6 +2,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+$nordB: #242933;
 $nord0: #2e3440;
 $nord1: #3b4252;
 $nord2: #434c5e;
@@ -34,7 +35,7 @@ html {
 }
 
 body {
-    background-color: $nord0;
+    background-color: $nordB;
     color: $nord6;
     margin: 0;
     padding: 0;
@@ -51,7 +52,7 @@ h1, h2 {
 }
 
 .navbar {
-    background-color: $nord3;
+    background-color: $nord1;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
     position: fixed;
     top: 0;
@@ -111,8 +112,12 @@ h1, h2 {
     }
 
     &:hover {
-        background-color: $nord4;
-        color: $nord0;
+        background-color: $nord2;
+        border-left: 3px solid $nord8;
+        
+        .distro-img {
+            margin-left: calc(0.95rem - 3px);
+        }
     }
 }
 
@@ -122,11 +127,14 @@ h1, h2 {
 }
 
 .logo {
-    background-color: $nord1;
+    background-color: $nord3;
+}
 
-    &:hover {
-        background-color: $nord10;
-    }
+.logo-link:hover {
+    background-color: $nord3;
+    border: none;
+    margin-left: 3px;
+    width: calc(100% - 3px);
 }
 
 .text-box {
