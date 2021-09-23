@@ -36,10 +36,12 @@ h1, h2 {
   width: 5rem;
   -webkit-transition: 200ms ease;
   transition: 200ms ease;
+  overflow: hidden;
 }
 
 .navbar:hover {
   width: 16rem;
+  overflow: scroll;
 }
 
 .navbar:hover .navbar-text {
