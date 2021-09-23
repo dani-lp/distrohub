@@ -58,11 +58,13 @@ h1, h2 {
     height: 100vh;
     width: 5rem;
     transition: 200ms ease;
-    overflow: hidden;
 
     &:hover {
         width: 16rem;
-        overflow: scroll;
+        
+        .navbar-list {
+            overflow: scroll;
+        }
 
         .navbar-text {
             display: inline;
@@ -78,6 +80,7 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     height: 100%;
+    overflow: hidden;
 }
 
 .navbar-item {

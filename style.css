@@ -36,11 +36,13 @@ h1, h2 {
   width: 5rem;
   -webkit-transition: 200ms ease;
   transition: 200ms ease;
-  overflow: hidden;
 }
 
 .navbar:hover {
   width: 16rem;
+}
+
+.navbar:hover .navbar-list {
   overflow: scroll;
 }
 
@@ -63,6 +65,7 @@ h1, h2 {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  overflow: hidden;
 }
 
 .navbar-item {
