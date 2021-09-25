@@ -66,7 +66,7 @@ const hasVoted = () => {
 
 // API requests
 const getAllVotes = () => {
-    fetch(`${process.env.API_URL}/api/votes`)
+    fetch(`${"http://127.0.0.1:3001"}/api/distros`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -81,11 +81,28 @@ const getAllVotes = () => {
 }
 
 const getVotes = distro => {
-
+    fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject(response);
+            }
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.warn('Something went wrong.', err);
+        });
 }
 
 const addVote = distro => {
-
+    fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        console.log(response);
+    });
 }
-
-

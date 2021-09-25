@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const Distro = require('./models/distro');
 
 const app = express();
 
 // Middleware and handlers
 app.use(express.json());
+app.use(cors());
 
 const unknownEndpoint = (request, response) => {
     response.status(404).send({ error: 'unknown endpoint' });
