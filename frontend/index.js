@@ -1,5 +1,5 @@
+// Show only requested content
 const distroSections = document.getElementsByClassName('content-box');
-
 Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
 var activeTextboxId = distroSections[0].id;
 distroSections[0].style.display = "block";
@@ -13,6 +13,7 @@ window.addEventListener('hashchange', () => {
 });
 
 
+// Theme toggles
 const themeButton = document.getElementById('theme-button');
 const aboutIcon = document.getElementById('about-icon');
 const body = document.body;
@@ -40,10 +41,51 @@ themeButton.onclick = () => {
             <path
             d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
             </svg>`
-    
+
     aboutIcon.src = isDark
         ? "icons/512_about_black.png"
         : "icons/512_about_white.png";
 
     isDark = !isDark;
 }
+
+
+// Cookies
+const setVoted = () => {
+    const d = new Date();
+    d.setTime(d.getTime() + 86400000);  // Set cookie timeout on one day (allow voting once per day)
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = "voted=true;" + expires + ";path=/";
+}
+
+const hasVoted = () => {
+    let hasVoted = getCookie("voted");
+    return hasVoted != "";
+}
+
+
+// API requests
+const getAllVotes = () => {
+    fetch(`${process.env.API_URL}/api/votes`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject(response);
+            }
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.warn('Something went wrong.', err);
+        });
+}
+
+const getVotes = distro => {
+
+}
+
+const addVote = distro => {
+
+}
+
+
