@@ -1,44 +1,53 @@
-// @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-$nordB: #242933;
-$nord0: #2e3440;
-$nord1: #3b4252;
-$nord2: #434c5e;
-$nord3: #4c566a;
-$nord4: #d8dee9;
-$nord5: #e5e9f0;
-$nord6: #eceff4;
-$nord7: #8fbcbb;
-$nord8: #88c0d0;
-$nord9: #81a1c1;
-$nord10: #5e81ac;
-$nord11: #bf616a;
-$nord12: #d08770;
-$nord13: #ebcb8b;
-$nord14: #a3be8c;
-$nord15: #b48ead;
-
 :root {
     font-size: 16px;
-    // font-family: "3270SemiNarrow Nerd Font Mono";
-    // font-family: 'Source Sans Pro', sans-serif;
-    // font-family: 'Titillium Web', sans-serif;
-    // font-family: 'Arvo', serif;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Rubik";
+
+    --nordB: #242933;
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
+}
+
+.light {
+    --bg: var(--nord4);
+    --bg-nav: var(--nord6);
+    --bg-nav-hover: var(--nord5);
+    --bg-logo: var(--nord8);
+    --text: var(--nord0);
+}
+
+.dark {
+    --bg: var(--nordB);
+    --bg-nav: var(--nord1);
+    --bg-nav-hover: var(--nord2);
+    --bg-logo: var(--nord3);
+    --text: var(--nord6);
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding: 3.5rem 0 0 0;   /*Lock the scroll a bit over the anchor*/
+    scroll-padding: 3.5rem 0 0 0;
 }
 
 body {
-    background-color: $nordB;
-    color: $nord6;
+    background-color: var(--bg);
+    color: var(--text);
     margin: 0;
     padding: 0;
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 main {
@@ -48,20 +57,25 @@ main {
     justify-content: center;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0.5rem;
     // text-align: center;
 }
 
+header {
+    margin: 0 10%;
+}
+
 .navbar {
-    background-color: $nord1;
+    background-color: var(--bg-nav);
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
     position: fixed;
     transition: 200ms ease;
 
     &:hover {
         width: 14rem;
-        
+
         .navbar-list {
             overflow-x: hidden;
             overflow-y: auto;
@@ -100,7 +114,7 @@ h1, h2 {
 
 .navbar-link {
     text-decoration: none;
-    color: $nord5;
+    color: var(--text);
     display: flex;
     align-items: center;
     height: 4.5rem;
@@ -112,9 +126,9 @@ h1, h2 {
     }
 
     &:hover {
-        background-color: $nord2;
-        border-left: 3px solid $nord8;
-        
+        background-color: var(--bg-nav-hover);
+        border-left: 3px solid var(--nord8);
+
         .distro-img {
             margin-left: calc(0.95rem - 3px);
         }
@@ -127,26 +141,53 @@ h1, h2 {
 }
 
 .logo {
-    background-color: $nord3;
+    background-color: var(--bg-logo);
 }
 
 .logo-link:hover {
-    background-color: $nord3;
+    background-color: var(--bg-logo);
     border: none;
     margin-left: 3px;
     width: calc(100% - 3px);
 }
 
 .content-box {
-    width: clamp(45ch, 70%, 90ch);
+    max-width: 75%;
+}
+
+.data-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-box {
-    background-color: $nord1;
+    background-color: var(--bg-nav);
     border-radius: 10px;
     margin: 1rem;
     padding: 0.1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+.theme-container {
+    margin: 1rem 1rem 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#theme-button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        background: var(--bg-nav-hover);
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -189,9 +230,9 @@ h1, h2 {
         }
 
         &:hover {
-            background-color: $nord2;
+            background-color: var(--bg-nav-hover);
             border-left: none;
-            
+
             .distro-img {
                 margin-left: 0;
             }
