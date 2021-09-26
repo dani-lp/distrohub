@@ -27,6 +27,7 @@
   --bg-logo: var(--nord8);
   --bg-alt: var(--nord1);
   --text: var(--nord0);
+  --link: var(--nord10);
 }
 
 .dark {
@@ -36,6 +37,7 @@
   --bg-logo: var(--nord3);
   --bg-alt: var(--nord4);
   --text: var(--nord6);
+  --link: var(--nord8);
 }
 
 html {
@@ -230,6 +232,14 @@ h2 {
   padding: 0.1rem 1rem;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+  line-height: 1.7rem;
+}
+
+.text-box a {
+  color: var(--link);
+  text-decoration: none;
+  -webkit-transition: color 1000ms ease-in-out;
+  transition: color 1000ms ease-in-out;
 }
 
 .theme-container {

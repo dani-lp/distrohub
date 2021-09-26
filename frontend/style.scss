@@ -28,6 +28,7 @@
     --bg-logo: var(--nord8);
     --bg-alt: var(--nord1);
     --text: var(--nord0);
+    --link: var(--nord10);
 }
 
 .dark {
@@ -37,6 +38,7 @@
     --bg-logo: var(--nord3);
     --bg-alt: var(--nord4);
     --text: var(--nord6);
+    --link: var(--nord8);
 }
 
 html {
@@ -197,6 +199,13 @@ h2 {
     margin: 1rem;
     padding: 0.1rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+    line-height: 1.7rem;
+
+    a {
+        color: var(--link);
+        text-decoration: none;
+        transition: color 1000ms ease-in-out;
+    }
 }
 
 .theme-container {
