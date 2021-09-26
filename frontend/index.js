@@ -1,19 +1,74 @@
+// Imports
+
+
+// General
+const translateDistroName = id => {
+    switch (id) {
+        case 'arch-linux':
+            return 'Arch Linux';
+        case 'debian':
+            return 'Debian';
+        case 'fedora':
+            return 'Fedora';
+        case 'gentoo':
+            return 'Gentoo';
+        case 'kali-linux':
+            return 'Kali Linux';
+        case 'manjaro':
+            return 'Manjaro';
+        case 'linux-mint':
+            return 'Linux Mint';
+        case 'opensuse':
+            return 'OpenSUSE';
+        case 'raspbian':
+            return 'Raspbian';
+        case 'ubuntu':
+            return 'Ubuntu';
+    }
+}
+
+
 // Show only requested content
 const distroSections = document.getElementsByClassName('content-box');
+const showAllCheck = document.getElementById('show-all-check');
 Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
 var activeTextboxId = distroSections[0].id;
 distroSections[0].style.display = "block";
 
 window.addEventListener('hashchange', () => {
-    var locationId = window.location.hash.substring(1);
-    if (locationId === "") locationId = "linux";
-    document.getElementById(activeTextboxId).style.display = "none";
-    activeTextboxId = locationId;
-    document.getElementById(locationId).style.display = "block";
+    if (!showAllCheck.checked) {
+        var locationId = window.location.hash.substring(1);
+        if (locationId === "") locationId = "linux";
+        document.getElementById(activeTextboxId).style.display = "none";
+        activeTextboxId = locationId;
+        document.getElementById(locationId).style.display = "block";
+    }
 });
 
 
-// Theme toggles
+// Theme and display toggles
+const showAllContainer = document.getElementById('switch-container');
+const triggerShowAllChange = () => {
+    if (showAllCheck.checked) {
+        Array.prototype.forEach.call(distroSections, el => el.style.display = "block");
+    } else {
+        Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
+        var locationId = window.location.hash.substring(1);
+        if (locationId === "") locationId = "linux";
+        document.getElementById(locationId).style.display = "block";
+    }
+}
+
+showAllContainer.onclick = () => {
+    showAllCheck.checked = !showAllCheck.checked;
+    triggerShowAllChange();
+}
+
+showAllCheck.onchange = () => {
+    triggerShowAllChange();
+}
+
+
 const themeButton = document.getElementById('theme-button');
 const aboutIcon = document.getElementById('about-icon');
 const body = document.body;
@@ -50,6 +105,23 @@ themeButton.onclick = () => {
 }
 
 
+// Scroll effects
+const header = document.getElementById('header');
+
+var showHeaderOnScroll = () => {
+    var y = window.scrollY;
+    if (y >= 100) {
+        isDark
+            ? header.style.backgroundColor = "#4c566a"
+            : header.style.backgroundColor = "#fff";
+    } else {
+        header.style.backgroundColor = "transparent";
+    }
+};
+
+window.addEventListener("scroll", showHeaderOnScroll);
+
+
 // Cookies
 const setVoted = () => {
     const d = new Date();
@@ -65,44 +137,100 @@ const hasVoted = () => {
 
 
 // API requests
-const getAllVotes = () => {
-    fetch(`${"http://127.0.0.1:3001"}/api/distros`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return Promise.reject(response);
-            }
-        }).then(data => {
-            console.log(data);
-        }).catch(err => {
-            console.warn('Something went wrong.', err);
-        });
+const getAllVotes = async () => {
+    return await fetch(`${"http://127.0.0.1:3001"}/api/distros`);
 }
 
-const getVotes = distro => {
-    fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return Promise.reject(response);
-            }
-        }).then(data => {
-            console.log(data);
-        }).catch(err => {
-            console.warn('Something went wrong.', err);
-        });
+const getVotes = async distro => {
+    return await fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`);
 }
 
-const addVote = distro => {
+const addVote = async distro => {
     fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-    }).then(response => {
-        console.log(response);
     });
 }
+
+
+// Data visualization
+const translateVotes = async () => {
+    const data = getAllVotes()
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return Promise.reject(response);
+            }
+        }).then(data => {
+            let dataArr = new Array(2);
+            dataArr[0] = new Array(data.length);
+            dataArr[1] = new Array(data.length);
+
+            for (let i = 0; i < data.length; i++) {
+                dataArr[0][i] = translateDistroName(data[i].name);
+                dataArr[1][i] = data[i].votes;
+            }
+
+            return dataArr;
+        }).catch(err => {
+            console.warn('Something went wrong.', err);
+        });
+
+    return data;
+}
+
+var voteChart = null;
+translateVotes().then(data => {
+    var ctx = document.getElementById('vote-chart');
+    voteChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data[0],
+            datasets: [{
+                label: 'Number of votes',
+                data: data[1],
+                backgroundColor: [
+                    'rgba(191, 97, 106, 0.2)',
+                    'rgba(129, 161, 193, 0.2)',
+                    'rgba(235, 203, 139, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(180, 142, 173, 0.2)',
+                    'rgba(163, 190, 140, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(191, 97, 106, 1)',
+                    'rgba(129, 161, 193, 1)',
+                    'rgba(235, 203, 139, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(180, 142, 173, 1)',
+                    'rgba(163, 190, 140, 1)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(191, 97, 106, 0.8)',
+                    'rgba(129, 161, 193, 0.8)',
+                    'rgba(235, 203, 139, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(180, 142, 173, 0.8)',
+                    'rgba(163, 190, 140, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    onClick: (e) => e.stopPropagation()
+                }
+            }
+        }
+    });
+});
