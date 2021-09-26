@@ -102,6 +102,8 @@ themeButton.onclick = () => {
         : "icons/512_about_white.png";
 
     isDark = !isDark;
+    
+    showHeaderOnScroll();
 }
 
 
