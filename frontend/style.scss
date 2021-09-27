@@ -362,6 +362,20 @@ input:checked + .slider:before {
 
         &:hover {
             color: var(--bg-alt);
+
+            &::after {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 5px;
+                position: absolute;
+                content: "You have already voted today.";
+                height: 80px;
+                width: 140px;
+                transform: translate(-57px, 25px);
+                border-radius: 10px;
+                background-color: var(--bg-nav);
+            }
         }
     }
 }

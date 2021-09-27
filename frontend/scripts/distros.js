@@ -255,19 +255,22 @@ loadChartData();
 // Voting system
 const buttons = document.getElementsByClassName('vote-button');
 Array.prototype.forEach.call(buttons, el => {
-    if (hasVoted() && false) el.disabled = true;
+    if (hasVoted()) el.disabled = true;
     else {
         el.onclick = () => {
-            addVote(translateButtonId(el.id))
-                .then(() => {
-                    setVoted();
-                    el.disabled = true;
-                    voteChart.destroy();
-                    setTimeout(() => {  // TODO: improve
-                        loadChartData();
-                    }, 50);
-                })
-                .catch(console.log);
+            if (confirm(`Do you want to vote for ${translateDistroName(translateButtonId(el.id))}? You can only vote once per day.`)) {
+                addVote(translateButtonId(el.id))
+                    .then(() => {
+                        setVoted();
+                        Array.prototype.forEach.call(buttons, el => el.disabled = true);
+                        el.disabled = true;
+                        voteChart.destroy();
+                        setTimeout(() => {  // TODO: improve
+                            loadChartData();
+                        }, 50);
+                    })
+                    .catch(console.log);
+            }
         }
     }
 });

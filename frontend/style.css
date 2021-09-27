@@ -437,6 +437,27 @@ input:checked + .slider:before {
   color: var(--bg-alt);
 }
 
+.vote-button:disabled:hover::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 5px;
+  position: absolute;
+  content: "You have already voted today.";
+  height: 80px;
+  width: 140px;
+  -webkit-transform: translate(-57px, 25px);
+          transform: translate(-57px, 25px);
+  border-radius: 10px;
+  background-color: var(--bg-nav);
+}
+
 .all-votes-container {
   width: 60%;
 }
