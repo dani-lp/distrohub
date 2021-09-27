@@ -355,6 +355,15 @@ input:checked + .slider:before {
     &:hover {
         color: var(--link);
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        border-color: var(--bg-alt);
+
+        &:hover {
+            color: var(--bg-alt);
+        }
+    }
 }
 
 .all-votes-container {

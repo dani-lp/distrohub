@@ -428,6 +428,15 @@ input:checked + .slider:before {
   color: var(--link);
 }
 
+.vote-button:disabled {
+  cursor: not-allowed;
+  border-color: var(--bg-alt);
+}
+
+.vote-button:disabled:hover {
+  color: var(--bg-alt);
+}
+
 .all-votes-container {
   width: 60%;
 }

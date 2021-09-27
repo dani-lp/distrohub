@@ -27,6 +27,10 @@ const translateDistroName = id => {
     }
 }
 
+const translateButtonId = id => {
+    return id.substring(0, id.length - 7);
+}
+
 
 // Show only requested content
 const distroSections = document.getElementsByClassName('content-box');
@@ -97,7 +101,7 @@ themeButton.onclick = () => {
             </svg>`
 
     isDark = !isDark;
-    
+
     showHeaderOnScroll();
 }
 
@@ -128,8 +132,18 @@ const setVoted = () => {
 }
 
 const hasVoted = () => {
-    let hasVoted = getCookie("voted");
-    return hasVoted != "";
+    let name = "voted";
+    let cookieArr = document.cookie.split(';');
+    for (let i = 0; i < cookieArr.length; i++) {
+        let cookie = cookieArr[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -181,53 +195,81 @@ const translateVotes = async () => {
 }
 
 var voteChart = null;
-translateVotes().then(data => {
-    var ctx = document.getElementById('vote-chart');
-    voteChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: data[0],
-            datasets: [{
-                label: 'Number of votes',
-                data: data[1],
-                backgroundColor: [
-                    'rgba(191, 97, 106, 0.2)',
-                    'rgba(129, 161, 193, 0.2)',
-                    'rgba(235, 203, 139, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(180, 142, 173, 0.2)',
-                    'rgba(163, 190, 140, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(191, 97, 106, 1)',
-                    'rgba(129, 161, 193, 1)',
-                    'rgba(235, 203, 139, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(180, 142, 173, 1)',
-                    'rgba(163, 190, 140, 1)'
-                ],
-                hoverBackgroundColor: [
-                    'rgba(191, 97, 106, 0.8)',
-                    'rgba(129, 161, 193, 0.8)',
-                    'rgba(235, 203, 139, 0.8)',
-                    'rgba(75, 192, 192, 0.8)',
-                    'rgba(180, 142, 173, 0.8)',
-                    'rgba(163, 190, 140, 0.8)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+
+const loadChartData = () => {
+    translateVotes().then(data => {
+        var ctx = document.getElementById('vote-chart');
+        voteChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data[0],
+                datasets: [{
+                    label: 'Number of votes',
+                    data: data[1],
+                    backgroundColor: [
+                        'rgba(191, 97, 106, 0.2)',
+                        'rgba(129, 161, 193, 0.2)',
+                        'rgba(235, 203, 139, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(180, 142, 173, 0.2)',
+                        'rgba(163, 190, 140, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(191, 97, 106, 1)',
+                        'rgba(129, 161, 193, 1)',
+                        'rgba(235, 203, 139, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(180, 142, 173, 1)',
+                        'rgba(163, 190, 140, 1)'
+                    ],
+                    hoverBackgroundColor: [
+                        'rgba(191, 97, 106, 0.8)',
+                        'rgba(129, 161, 193, 0.8)',
+                        'rgba(235, 203, 139, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(180, 142, 173, 0.8)',
+                        'rgba(163, 190, 140, 0.8)'
+                    ],
+                    borderWidth: 1
+                }]
             },
-            plugins: {
-                legend: {
-                    onClick: (e) => e.stopPropagation()
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        onClick: (e) => e.stopPropagation()
+                    }
                 }
             }
-        }
+        });
     });
+}
+
+loadChartData();
+
+
+// Voting system
+const buttons = document.getElementsByClassName('vote-button');
+Array.prototype.forEach.call(buttons, el => {
+    if (hasVoted() && false) el.disabled = true;
+    else {
+        el.onclick = () => {
+            addVote(translateButtonId(el.id))
+                .then(() => {
+                    setVoted();
+                    el.disabled = true;
+                    voteChart.destroy();
+                    setTimeout(() => {  // TODO: improve
+                        loadChartData();
+                    }, 50);
+                })
+                .catch(console.log);
+        }
+    }
 });
+
+// TODO: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
