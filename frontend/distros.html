@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="distros.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Distrohub</title>
+</head>
+
+<body class="dark">
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item">
+                <a href="#arch-linux" class="navbar-link">
+                    <img class="distro-img" src="icons/128_arch.png">
+                    <span class="navbar-text">Arch&nbspLinux</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#debian" class="navbar-link">
+                    <img class="distro-img" src="icons/128_debian.png">
+                    <span class="navbar-text">Debian</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#fedora" class="navbar-link">
+                    <img class="distro-img" src="icons/128_fedora_newlogo.png">
+                    <span class="navbar-text">Fedora</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#gentoo" class="navbar-link">
+                    <img class="distro-img" src="icons/128_gentoo.png">
+                    <span class="navbar-text">Gentoo</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#kali-linux" class="navbar-link">
+                    <img class="distro-img" src="icons/128_kali.png">
+                    <span class="navbar-text">Kali&nbspLinux</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#manjaro" class="navbar-link">
+                    <img class="distro-img" src="icons/128_manjaro.png">
+                    <span class="navbar-text">Manjaro</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#linux-mint" class="navbar-link">
+                    <img class="distro-img" src="icons/128_mint.png">
+                    <span class="navbar-text">Linux&nbspMint</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#opensuse" class="navbar-link">
+                    <img class="distro-img" src="icons/128_suse.png">
+                    <span class="navbar-text">OpenSUSE</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#raspbian" class="navbar-link">
+                    <img class="distro-img" src="icons/128_raspios.png">
+                    <span class="navbar-text">Raspbian</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+                <a href="#ubuntu" class="navbar-link">
+                    <img class="distro-img" src="icons/128_ubuntu.png">
+                    <span class="navbar-text">Ubuntu</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="header">
+        <div class="header-container">
+            <div class="links-container">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img class="header-logo" src="icons/128_linux.png">
+                        <h2 id="header-text">Distrohub</h2>
+                    </a>
+                </div>
+                <a href="distros.html" class="page-link">Distros</a>
+                <a href="index.html" class="page-link">Test</a>
+            </div>
+
+            <div class="theme-container">
+                <div class="switch-container" id="switch-container">
+                    <span>Show all</span>
+                    <label class="switch">
+                        <input type="checkbox" id="show-all-check">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button id="theme-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="32"
+                        height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="data-container">
+            <div class="content-box" id="arch-linux">
+                <h2>Arch Linux</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_arch.png" alt="Arch Linux">
+                </div>
+            </div>
+
+            <div class="content-box" id="debian">
+                <h2>Debian</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_debian.png" alt="Debian">
+                </div>
+            </div>
+
+            <div class="content-box" id="fedora">
+                <h2>Fedora</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_fedora_newlogo.png" alt="Fedora">
+                </div>
+            </div>
+
+            <div class="content-box" id="gentoo">
+                <h2>Gentoo</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_gentoo.png" alt="Gentoo">
+                </div>
+            </div>
+
+            <div class="content-box" id="kali-linux">
+                <h2>Kali Linux</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_kali.png" alt="Kali Linux">
+                </div>
+            </div>
+
+            <div class="content-box" id="manjaro">
+                <h2>Manjaro</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_manjaro.png" alt="Manjaro">
+                </div>
+            </div>
+
+            <div class="content-box" id="linux-mint">
+                <h2>Linux Mint</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_mint.png" alt="Linux Mint">
+                </div>
+            </div>
+
+            <div class="content-box" id="opensuse">
+                <h2>OpenSUSE</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_suse.png" alt="OpenSUSE">
+                </div>
+            </div>
+
+            <div class="content-box" id="raspbian">
+                <h2>Raspbian</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_raspios.png" alt="Raspbian">
+                </div>
+            </div>
+
+            <div class="content-box" id="ubuntu">
+                <h2>Ubuntu</h2>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dicta corporis tempore
+                            officia
+                            voluptates
+                            aperiam ullam reprehenderit, nemo iste culpa officiis consectetur repudiandae excepturi
+                            harum
+                            veniam
+                            sit
+                            odit
+                            deleniti? Sit?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, vel voluptate amet
+                            provident
+                            impedit
+                            non
+                            magnam a perferendis quibusdam ratione laboriosam repellat veritatis veniam minus libero,
+                            assumenda
+                            inventore
+                            obcaecati ad.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, nihil minus beatae
+                            reprehenderit
+                            qui
+                            quo itaque
+                            quasi ipsa illum cum eligendi placeat mollitia porro incidunt sit earum, voluptatibus, quod
+                            hic.
+                        </p>
+                    </div>
+                    <img src="icons/128_ubuntu.png" alt="Ubuntu">
+                </div>
+            </div>
+        </div>
+
+        <div class="vote-container">
+            <canvas id="vote-chart"></canvas>
+        </div>
+    </main>
+</body>
+
+</html>
