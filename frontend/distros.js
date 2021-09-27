@@ -38,7 +38,7 @@ distroSections[0].style.display = "block";
 window.addEventListener('hashchange', () => {
     if (!showAllCheck.checked) {
         var locationId = window.location.hash.substring(1);
-        if (locationId === "") locationId = "linux";
+        if (locationId === "") locationId = "arch-linux";
         document.getElementById(activeTextboxId).style.display = "none";
         activeTextboxId = locationId;
         document.getElementById(locationId).style.display = "block";
@@ -54,7 +54,7 @@ const triggerShowAllChange = () => {
     } else {
         Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
         var locationId = window.location.hash.substring(1);
-        if (locationId === "") locationId = "linux";
+        if (locationId === "") locationId = "arch-linux";
         document.getElementById(locationId).style.display = "block";
     }
 }
