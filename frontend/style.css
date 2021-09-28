@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+img:not([alt]) {
+  border: 5px solid red;
+}
+
 :root {
   font-size: 16px;
   font-family: 'Rubik', sans-serif;
@@ -513,6 +517,21 @@ input:checked + .slider:before {
   main {
     margin-left: 0;
     margin-bottom: 5rem;
+  }
+  .content-box {
+    margin: 0;
+  }
+  .data-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .text-box {
+    margin: 0;
+  }
+  .all-votes-container {
+    width: 90vw;
   }
 }
 
