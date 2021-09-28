@@ -407,7 +407,7 @@ input:checked + .slider:before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 1.5rem;
+  margin: 1.5rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -460,6 +460,7 @@ input:checked + .slider:before {
   opacity: 0;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
+  pointer-events: none;
 }
 
 .vote-button:disabled::after {
@@ -476,6 +477,7 @@ input:checked + .slider:before {
   opacity: 0;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
+  pointer-events: none;
 }
 
 .vote-button:disabled:hover {
