@@ -1,9 +1,22 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose')
 const Distro = require('./models/distro');
+const Tip = require('./models/tip');
 
 const app = express();
+
+const url = process.env.MONGODB_URI;
+console.log('connecting to', url);
+mongoose.connect(url)
+    .then(result => {
+        console.log('connected to MongoDB');
+    })
+    .catch((error) => {
+        console.log('error connecting to MongoDB:', error.message);
+    });
+
 
 // Middleware and handlers
 app.use(express.json());
@@ -54,6 +67,29 @@ app.put('/api/distros/:id', (request, response, next) => {
         })
         .catch(error => next(error));
 });
+
+app.get('/api/tips', (request, response) => {
+    Tip.find({}).then(tips => {
+        response.json(tips);
+    });
+});
+
+app.post('/api/tips', (request, response, next) => {
+    const body = request.body;
+
+    const tip = new Tip({
+        author: body.author,
+        content: body.content,
+        date: new Date(),
+    });
+
+    tip.save()
+        .then(savedTip => {
+            response.json(savedTip);
+        })
+        .catch(error => next(error));
+});
+
 
 app.use(unknownEndpoint);
 
