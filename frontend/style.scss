@@ -467,6 +467,10 @@ input:checked + .slider:before {
         display: none;
     }
 
+    #header-text {
+        display: none;
+    }
+
     main {
         margin-left: 0;
         margin-bottom: 5rem;
