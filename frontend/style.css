@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 :root {
   font-size: 16px;
-  font-family: "Rubik";
+  font-family: 'Rubik', sans-serif;
   --nordB: #242933;
   --nord0: #2e3440;
   --nord1: #3b4252;
