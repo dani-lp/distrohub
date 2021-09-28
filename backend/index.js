@@ -27,10 +27,6 @@ const errorHandler = (error, request, response, next) => {
 
 
 // Routes
-app.get('/', (request, response) => {
-    response.send('UWU');
-});
-
 app.get('/api/distros', (request, response) => {
     Distro.find({}).then(distros => {
         response.json(distros);
@@ -64,6 +60,7 @@ app.use(unknownEndpoint);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on http://127.0.0.1:${PORT}/`);
+    console.log(`Database at http://127.0.0.1:${PORT}/api/distros`);
 });
 
 // pwd: GHj0YagPcbahukLG
