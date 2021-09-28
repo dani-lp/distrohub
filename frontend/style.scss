@@ -367,21 +367,44 @@ input:checked + .slider:before {
         cursor: not-allowed;
         border-color: var(--bg-alt);
 
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+            position: absolute;
+            content: "You have already voted today.";
+            height: 80px;
+            width: 140px;
+            transform: translate(-57px, 50px);
+            border-radius: 10px;
+            background-color: var(--bg-nav);
+            opacity: 0;
+            transition: opacity 200ms ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            margin-left: -7px;
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent transparent var(--bg-nav) var(--bg-nav);
+            transition: opacity 600ms;
+            transform: translate(-15px, 44px) rotateZ(135deg);
+            opacity: 0;
+            transition: opacity 200ms ease;
+        }
+
         &:hover {
             color: var(--bg-alt);
 
+            &::before {
+                opacity: 1;
+            }
+
             &::after {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 5px;
-                position: absolute;
-                content: "You have already voted today.";
-                height: 80px;
-                width: 140px;
-                transform: translate(-57px, 25px);
-                border-radius: 10px;
-                background-color: var(--bg-nav);
+                opacity: 1;
             }
         }
     }
