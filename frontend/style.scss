@@ -458,7 +458,8 @@ input:checked + .slider:before {
 }
 
 .rice-el-img {
-    max-width: 45%;
+    width: 42rem;
+    max-width: 90vw;
     margin: 1rem;
     @include content-container;
 }
@@ -467,9 +468,21 @@ input:checked + .slider:before {
     @include flex-center;
 }
 
-#rice-slider {
-    width: 55%;
-    @include content-container;
+.carousel-container {
+    width: 640px;
+    margin: auto;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    height: 360px;
+
+    img {
+        @include content-container;
+    }
 }
 
 .arrow-container {
@@ -607,6 +620,10 @@ input:checked + .slider:before {
     }
 
     .comparison-container {
+        flex-direction: column;
+    }
+
+    .rice-el-container {
         flex-direction: column;
     }
 }
