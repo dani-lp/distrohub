@@ -489,6 +489,43 @@ input:checked + .slider:before {
     }
 }
 
+.comparison-container {
+    @include flex-center;
+    margin: 2rem 0;
+}
+
+.comparison-title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    margin-right: 4rem;
+    width: 20%;
+
+    h2 {
+        margin: 0.5rem 0;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.comparison-table {
+    width: 40%;
+    margin-left: 2rem;
+
+    th {
+        text-align: left;
+        border-bottom: 1px solid var(--nord1);
+    }
+
+    td {
+        padding-bottom: 0.5rem;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .navbar {
         bottom: 0;
