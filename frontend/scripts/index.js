@@ -65,7 +65,7 @@ const header = document.getElementById('header');
 
 var showHeaderOnScroll = () => {
     var y = window.scrollY;
-    if (y >= 100) {
+    if (y >= 50) {
         isDark
             ? header.style.backgroundColor = "#4c566a"
             : header.style.backgroundColor = "#fff";

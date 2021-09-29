@@ -606,6 +606,60 @@ input:checked + .slider:before {
   stroke: var(--link);
 }
 
+.comparison-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem 0;
+}
+
+.comparison-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 4rem;
+  width: 20%;
+}
+
+.comparison-title h2 {
+  margin: 0.5rem 0;
+  font-size: 30px;
+}
+
+.comparison-title p {
+  font-size: 20px;
+}
+
+.comparison-table {
+  width: 40%;
+  margin-left: 2rem;
+}
+
+.comparison-table th {
+  text-align: left;
+  border-bottom: 1px solid var(--nord1);
+}
+
+.comparison-table td {
+  padding-bottom: 0.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
