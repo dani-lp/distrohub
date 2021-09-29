@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/index.js"></script>
+
+    <title>Distrohub - Ricing</title>
+</head>
+
+<body class="dark">
+    <header id="header">
+        <div class="header-container">
+            <div class="links-container">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img class="header-logo" src="icons/128_linux.png" alt="header-logo">
+                        <h2 id="header-text">Distrohub</h2>
+                    </a>
+                </div>
+                <a href="distros.html" class="page-link">Distros</a>
+                <a href="ricing.html" class="page-link">Ricing</a>
+                <a href="tips.html" class="page-link">Tips</a>
+            </div>
+
+            <div class="theme-container">
+                <button id="theme-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="32"
+                        height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="data-container">
+            <div class="content-box">
+                <h1>What is "ricing"?</h1>
+                <div class="data-box">
+                    <div class="text-box">
+                        <p>
+                            "Rice" is the term used to refer to visual improvements and other customizations applied to
+                            a Unix/Linux system, shiny and good looking desktops that really catch your atention.
+                            However, getting into the world of <i>ricing</i> can seem daunting at first. The purpose of
+                            this section is to help begginer users to understand terms such as <i>Window Managers</i>,
+                            <i>Desktop Environments</i>, <i>Terminal Emulators</i>, <i>Shells</i> and so on.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-container">
+            <div class="arrow-container">
+                <svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-left" width="64"
+                    height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <line x1="5" y1="12" x2="9" y2="16" />
+                    <line x1="5" y1="12" x2="9" y2="8" />
+                </svg>
+            </div>
+            <img id="rice-slider" src="images/rice1.png" alt="rice-img">
+            <div class="arrow-container">
+                <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="64"
+                    height="64" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <line x1="15" y1="16" x2="19" y2="12" />
+                    <line x1="15" y1="8" x2="19" y2="12" />
+                </svg>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="data-container">
+            <div class="rice-el-container" id="desktop-environments">
+                <div class="rice-el-text">
+                    <h2>❯ Desktop Environments</h2>
+                    <p>
+                        Most PC users use a desktop environment. They are a collection of program bundled together to
+                        make a workspace, and they all come with a <a href="#window-managers">window manager</a>, a
+                        panel, a file manager, a <a href="#terminal-emulators">terminal emulator</a>, a set of default
+                        programs (text editors, music players, etc) and so on. For example, both Windows and macOS use a
+                        desktop environment. In Linux, some of the most used ones are:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.gnome.org/">Gnome</a></li>
+                        <li><a href="https://kde.org/es/">KDE</a></li>
+                        <li><a href="https://www.xfce.org/">XFCE</a></li>
+                    </ul>
+                </div>
+                <img src="https://www.muylinux.com/wp-content/uploads/2021/03/01-GNOME-40-en-Fedora-34-beta.jpg"
+                    alt="gnome-de" class="rice-el-img">
+            </div>
+            <div class="rice-el-container" id="window-managers">
+                <img src="https://i.redd.it/408oo1anzfo71.png" alt="wm-bspwm" class="rice-el-img">
+                <div class="rice-el-text">
+                    <h2>❯ Tiling Window Managers</h2>
+                    <p>
+                        A window manager is software that manages the placement of open programs/windows. Most
+                        <a href="#desktop-environments">desktop environments</a> have a window manager of their own;
+                        however, in the Linux community <i>tiling window managers</i> are very popular as well. They
+                        organize windows into mutually non-overlapping frames, often called <b>tiles</b>, so that every
+                        open program can be seen at all times. Some of the most popular ones are:
+                    </p>
+                    <ul>
+                        <li><a href="https://i3wm.org/">i3wm</a></li>
+                        <li><a href="https://github.com/baskerville/bspwm">bspwm</a></li>
+                        <li><a href="https://awesomewm.org/">AwesomeWM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rice-el-container" id="program-launchers">
+                <div class="rice-el-text">
+                    <h2>❯ Program Launchers</h2>
+                    <p>
+                        A launcher is a program that displays a dialog to perform an action, tipically launch an
+                        application. A lot of them also offer other functions, such as switch between windows or open
+                        files. They are often used in conjunction with <a href="#window-managers">tiling window
+                            managers</a>. Some commonly used ones are:
+                    </p>
+                    <ul>
+                        <li><a href="https://github.com/davatorium/rofi">Rofi</a></li>
+                        <li><a href="https://tools.suckless.org/dmenu/">Dmenu</a></li>
+                    </ul>
+                </div>
+                <img src="images/rofi.png" alt="rofi-drun" class="rice-el-img">
+            </div>
+            <div class="rice-el-container" id="terminal-emulators">
+                <img src="https://user-images.githubusercontent.com/8886672/103264352-5ab0d500-49a2-11eb-8961-02f7da66c855.png"
+                    alt="alacritty-terminal" class="rice-el-img">
+                <div class="rice-el-text">
+                    <h2>❯ Terminal Emulators</h2>
+                    <p>
+                        A terminal emulator is a program that emulates a video terminal within some other display
+                        architecture; most <a href="#desktop-environments">desktop environments</a> come packed with
+                        their own. Often synonymous of with the term <a href="#shells">shell</a>, the term terminal
+                        covers all remote terminals, including graphical interfaces. Some of them are:
+                    </p>
+                    <ul>
+                        <li><a href="https://github.com/alacritty/alacritty">Alacritty</a></li>
+                        <li><a href="https://terminator-gtk3.readthedocs.io/en/latest/">Terminator</a></li>
+                        <li><a href="https://wiki.archlinux.org/title/rxvt-unicode">urxvt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rice-el-container" id="shells">
+                <div class="rice-el-text">
+                    <h2>❯ Shells</h2>
+                    <p>
+                        Shells are interactive programs to access the operating system's services. They are the typical
+                        command prompt that can often be seen in tv shows and movies with someone furiously typing
+                        nonsense. Using their commands, we can perform tasks such as file manipulation, user management,
+                        downloading software, and so on. There are a lot of command-line utilities that you can use as
+                        well. The most popular shells are:
+                    </p>
+                    <ul>
+                        <li><a href="https://www.gnu.org/software/bash/">Bash</a></li>
+                        <li><a href="https://www.zsh.org/">Zsh</a></li>
+                        <li><a href="https://fishshell.com/">Fish</a></li>
+                    </ul>
+                </div>
+                <img src="images/shell.jpg" alt="shell" class="rice-el-img">
+            </div>
+            <div class="rice-el-container" id="system-info">
+                <img src="https://arcolinux.com/wp-content/uploads/2019/04/neofetch-different-logos.jpg" alt="neofetch"
+                    class="rice-el-img">
+                <div class="rice-el-text">
+                    <h2>❯ System Info</h2>
+                    <p>
+                        Most fancy screenshots in <a href="https://www.reddit.com/r/unixporn/">/r/unixporn</a> show
+                        their system specifications and their distro logo in a terminal. There are some command-line
+                        programs to do that; most of them are highly customizable and allow you to easily change the
+                        displayed information. The most popular ones are:
+                    </p>
+                    <ul>
+                        <li><a href="https://github.com/dylanaraps/neofetch">Neofetch</a></li>
+                        <li><a href="https://github.com/KittyKatt/screenFetch">Screenfetch</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--TODO: grid 3x2, wms des launchers terminalemulators shells systenminfo?-->
+        <!--https://thatnixguy.github.io/posts/ricing/-->
+        <!--Another option: 
+            TEXT    IMAGE
+            IMAGE   TEXT
+            TEXT    IMAGE
+            IMAGE   TEXT
+            ...
+        -->
+    </main>
+
+    <script src="scripts/carousel.js"></script>
+</body>
+
+</html>
