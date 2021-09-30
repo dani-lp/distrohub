@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    <script defer src="scripts/index.js"></script>
+    <script defer src="js/index.js"></script>
 
     <title>Distrohub - Tips</title>
 </head>
@@ -45,7 +45,44 @@
     <main>
         <h1>Community tips</h1>
         <h2>Work in progress</h2>
-        <!--Idea: 1/4 a la izquierda para el form, 3/4 restantes para mostrar los tips en un grid-->
+        <div class="tips-panel">
+            <div class="tips-form-container">
+                <form class="tips-form">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" maxlength="30">
+                    <label for="content">Content</label>
+                    <textarea name="content" id="content" maxlength="250"></textarea>
+
+                    <div class="switch-container" id="switch-container">
+                        <span>Tweet tip?</span>
+                        <label class="switch">
+                            <input type="checkbox" id="show-all-check">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <input type="submit" value="Add tip">
+                </form>
+            </div>
+            <div class="tips-container">
+                <div class="tip">
+                    <h3>AWA DE EWE</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia illum voluptate molestiae
+                        accusamus a molestias adipisci debitis corporis doloremque, ut, vero modi, nihil necessitatibus
+                        eligendi exercitationem reprehenderit delectus animi.
+                    </p>
+                </div>
+                <div class="tip">
+                    <h3>AWA DE EWE</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat blanditiis commodi
+                        eveniet porro exercitationem quam impedit maiores voluptatibus, nesciunt, animi rerum delectus
+                        cupiditate laborum? Magni repudiandae ratione iusto placeat.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
