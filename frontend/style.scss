@@ -469,10 +469,12 @@ input:checked + .slider:before {
 }
 
 .carousel-container {
+    @include content-container;
     width: 640px;
     margin: auto;
     overflow: hidden;
     max-width: 100vw;
+    z-index: -1;
 }
 
 .carousel-slide {
