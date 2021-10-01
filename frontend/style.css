@@ -684,10 +684,25 @@ input:checked + .slider:before {
 .comparison-table th {
   text-align: left;
   border-bottom: 1px solid var(--nord1);
+  background-color: var(--bg-nav);
+  line-height: 2rem;
+  padding: 0.5rem;
 }
 
 .comparison-table td {
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.comparison-table tbody td:first-child {
+  font-weight: bold;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: var(--bg-nav);
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: var(--bg-nav-hover);
 }
 
 .tips-panel {

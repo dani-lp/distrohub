@@ -5,6 +5,10 @@ img:not([alt]) {
     border: 5px solid red;
 }
 
+// div {
+//     border: 2px solid red;
+// }
+
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -533,14 +537,32 @@ input:checked + .slider:before {
 .comparison-table {
     width: 50rem;
     max-width: 95vw;
+    // border: 1px solid var(--bg-nav);
 
     th {
         text-align: left;
         border-bottom: 1px solid var(--nord1);
+        background-color: var(--bg-nav);
+        line-height: 2rem;
+        padding: 0.5rem;
     }
 
     td {
-        padding-bottom: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    tbody {
+        td:first-child {
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--bg-nav);
+        }
+
+        tr:nth-child(odd) {
+            background-color: var(--bg-nav-hover);
+        }
     }
 }
 
