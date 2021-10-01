@@ -157,7 +157,7 @@ const getVotes = async distro => {
 }
 
 const addVote = async distro => {
-    fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
+    return await fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
