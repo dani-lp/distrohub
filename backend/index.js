@@ -60,7 +60,6 @@ app.get('/api/distros/:id', (request, response, next) => {
 
 app.put('/api/distros/:id', (request, response, next) => {
     const name = request.params.id;
-    console.log('name', name);
     Distro.findOneAndUpdate({ name: name }, {$inc: {'votes': 1}}, { new: true })
         .then(updatedNote => {
             response.json(updatedNote);
