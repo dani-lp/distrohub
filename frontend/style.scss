@@ -132,6 +132,13 @@ hr {
         text-decoration: none;
         transition: color 1000ms ease-in-out, opacity 400ms ease;
     }
+
+    &:hover {
+        .header-logo {
+            transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: rotateZ(360deg);
+        }
+    }
 }
 
 .links-container {
@@ -314,13 +321,13 @@ input:checked + .slider:before {
     img {
         @include content-container;
         padding: 0.7rem;
-        background-color: var(--bg-nav);
+        background-color: var(--text-alt);
     }
 }
 
 .text-box {
     @include content-container;
-    background-color: var(--bg-nav);
+    background-color: var(--text-alt);
     margin: 1rem;
     padding: 0.1rem 1rem;
     line-height: 1.7rem;
@@ -447,7 +454,7 @@ input:checked + .slider:before {
 
 .rice-el-text {
     @include content-container;
-    background-color: var(--bg-nav);
+    background-color: var(--text-alt);
     margin: 1rem;
     padding: 0.1rem 1rem;
     line-height: 1.7rem;
@@ -539,11 +546,12 @@ input:checked + .slider:before {
 .comparison-table {
     width: 50rem;
     max-width: 95vw;
+    border-spacing: 0;
 
     th {
         text-align: left;
         border-bottom: 1px solid var(--bg-alt);
-        background-color: var(--bg-nav);
+        background-color: var(--text-alt);
         line-height: 2rem;
         padding: 0.5rem;
         transition: border-color 500ms ease-in-out;
@@ -559,11 +567,11 @@ input:checked + .slider:before {
         }
 
         tr:nth-child(even) {
-            background-color: var(--bg-nav);
+            background-color: var(--text-alt);
         }
 
         tr:nth-child(odd) {
-            background-color: var(--bg-nav-hover);
+            background-color: var(--bg-nav);
         }
     }
 }
@@ -591,7 +599,7 @@ input:checked + .slider:before {
 .tip {
     @include content-container;
     margin: 10px;
-    background-color: var(--bg-nav);
+    background-color: var(--text-alt);
     width: 300px;
 
     h3 {
@@ -611,7 +619,6 @@ input:checked + .slider:before {
 
 .tips-form {
     display: flex;
-    align-items: left;
     justify-content: center;
     flex-direction: column;
 
@@ -808,6 +815,10 @@ footer {
     }
 
     .rice-el-container {
+        flex-direction: column;
+    }
+
+    .tips-panel {
         flex-direction: column;
     }
 
