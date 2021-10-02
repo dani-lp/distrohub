@@ -685,10 +685,12 @@ input:checked + .slider:before {
 
 .comparison-table th {
   text-align: left;
-  border-bottom: 1px solid var(--nord1);
+  border-bottom: 1px solid var(--bg-alt);
   background-color: var(--bg-nav);
   line-height: 2rem;
   padding: 0.5rem;
+  -webkit-transition: border-color 500ms ease-in-out;
+  transition: border-color 500ms ease-in-out;
 }
 
 .comparison-table td {
@@ -856,6 +858,68 @@ input:checked + .slider:before {
   color: var(--link);
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5rem 0 1rem 0;
+}
+
+footer hr {
+  width: 90vw;
+  margin: 1rem 0;
+  color: var(--bg-alt);
+}
+
+footer .middle-hr {
+  width: 220px;
+}
+
+footer svg {
+  stroke: var(--link);
+  -webkit-transition: stroke 200ms ease, -webkit-transform 400ms ease;
+  transition: stroke 200ms ease, -webkit-transform 400ms ease;
+  transition: stroke 200ms ease, transform 400ms ease;
+  transition: stroke 200ms ease, transform 400ms ease, -webkit-transform 400ms ease;
+}
+
+footer svg:hover {
+  stroke: var(--nord15);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.contact-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-link {
+  margin: 0 10px;
+}
+
+.email {
+  color: var(--link);
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
@@ -936,6 +1000,9 @@ input:checked + .slider:before {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  footer {
+    margin-bottom: 5rem;
   }
 }
 

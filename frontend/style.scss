@@ -539,14 +539,14 @@ input:checked + .slider:before {
 .comparison-table {
     width: 50rem;
     max-width: 95vw;
-    // border: 1px solid var(--bg-nav);
 
     th {
         text-align: left;
-        border-bottom: 1px solid var(--nord1);
+        border-bottom: 1px solid var(--bg-alt);
         background-color: var(--bg-nav);
         line-height: 2rem;
         padding: 0.5rem;
+        transition: border-color 500ms ease-in-out;
     }
 
     td {
@@ -582,7 +582,7 @@ input:checked + .slider:before {
 .tips-container {
     @include flex-center;
     flex: 4;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 .tip {
@@ -590,7 +590,7 @@ input:checked + .slider:before {
     margin: 10px;
     background-color: var(--bg-nav);
     width: 300px;
-    
+
     h3 {
         margin: 0;
         padding: 10px;
@@ -633,7 +633,7 @@ input:checked + .slider:before {
         &:hover {
             border-color: var(--bg-alt);
         }
-        
+
         &:focus {
             border-top: 2px solid var(--link);
             border-bottom: 2px solid var(--link);
@@ -646,7 +646,8 @@ input:checked + .slider:before {
         height: 1em;
         transition: height 400ms ease;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             height: 10em;
         }
     }
@@ -681,6 +682,45 @@ input:checked + .slider:before {
             color: var(--link);
         }
     }
+}
+
+footer {
+    @include flex-center;
+    flex-direction: column;
+    margin: 5rem 0 1rem 0;
+
+    hr {
+        width: 90vw;
+        margin: 1rem 0;
+        color: var(--bg-alt);
+    }
+
+    .middle-hr {
+        width: 220px;
+    }
+
+    svg {
+        stroke: var(--link);
+        transition: stroke 200ms ease, transform 400ms ease;
+
+        &:hover {
+            stroke: var(--nord15);
+            transform: translateY(-5px);
+        }
+    }
+}
+
+.contact-row {
+    @include flex-center;
+}
+
+.social-link {
+    margin: 0 10px;
+}
+
+.email {
+    color: var(--link);
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -767,6 +807,10 @@ input:checked + .slider:before {
 
     .rice-el-container {
         flex-direction: column;
+    }
+
+    footer {
+        margin-bottom: 5rem;
     }
 }
 
