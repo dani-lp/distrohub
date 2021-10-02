@@ -569,12 +569,14 @@ input:checked + .slider:before {
 }
 
 .tips-panel {
-    width: 100%;
-    // height: 400px; // TEMP
     display: flex;
+    width: 100%;
+    max-width: 1600px;
 }
 
 .tips-form-container {
+    @include content-container;
+    background-color: var(--text-alt);
     flex: 1;
     padding: 1rem;
 }
@@ -583,6 +585,7 @@ input:checked + .slider:before {
     @include flex-center;
     flex: 4;
     flex-wrap: wrap;
+    margin: 0 2rem;
 }
 
 .tip {
@@ -623,8 +626,8 @@ input:checked + .slider:before {
         font-size: 16px;
         background-color: transparent;
         border: none;
-        border-top: 2px solid var(--bg);
-        border-bottom: 2px solid var(--nord3);
+        // border-top: 2px solid var(--text-alt);
+        border-bottom: 2px solid var(--link);
         outline: 0;
         color: var(--text);
         padding: 4px;
@@ -635,19 +638,18 @@ input:checked + .slider:before {
         }
 
         &:focus {
-            border-top: 2px solid var(--link);
-            border-bottom: 2px solid var(--link);
+            border-bottom: 2px solid var(--bg-alt);
         }
     }
-
+    
     textarea {
         font-family: "Rubik";
         resize: none;
         height: 1em;
         transition: height 400ms ease;
-
-        &:hover,
+        
         &:focus {
+            border-top: 2px solid var(--bg-alt);
             height: 10em;
         }
     }
@@ -690,7 +692,7 @@ footer {
     margin: 5rem 0 1rem 0;
 
     hr {
-        width: 90vw;
+        max-width: 90vw;
         margin: 1rem 0;
         color: var(--bg-alt);
     }
