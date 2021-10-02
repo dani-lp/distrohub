@@ -742,7 +742,7 @@ input:checked + .slider:before {
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
-  margin: 4px;
+  margin: 10px;
   background-color: var(--bg-nav);
   width: 300px;
 }

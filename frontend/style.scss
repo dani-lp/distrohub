@@ -587,7 +587,7 @@ input:checked + .slider:before {
 
 .tip {
     @include content-container;
-    margin: 4px;
+    margin: 10px;
     background-color: var(--bg-nav);
     width: 300px;
     
