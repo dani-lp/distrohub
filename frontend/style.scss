@@ -462,6 +462,7 @@ hr {
     justify-content: left;
     flex-direction: column;
     width: 25rem;
+    max-width: 95vw;
 
     h2 {
         margin: 0.5rem 0;
@@ -801,6 +802,12 @@ footer {
 
     .rice-el-img {
         max-width: 90vw;
+    }
+
+    .comparison-title {
+        h2, p {
+            text-align: center;
+        }
     }
 }
 

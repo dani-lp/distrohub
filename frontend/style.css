@@ -598,6 +598,7 @@ hr {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 25rem;
+  max-width: 95vw;
 }
 
 .comparison-title h2 {
@@ -1017,6 +1018,9 @@ footer svg:hover {
   }
   .rice-el-img {
     max-width: 90vw;
+  }
+  .comparison-title h2, .comparison-title p {
+    text-align: center;
   }
 }
 
