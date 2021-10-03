@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-// TODO: temp; remove!
-img:not([alt]) {
-    border: 5px solid red;
-}
-
-// div {
-//     border: 2px solid red;
-// }
-
 $max-page-width: 1500px;
 
 @mixin flex-center {
@@ -258,7 +249,6 @@ input:checked + .slider:before {
 
     &:hover {
         width: 14rem;
-        // border-bottom-right-radius: 0;
 
         .navbar-list {
             overflow-x: hidden;

@@ -1,6 +1,3 @@
-// Imports
-
-
 // General
 const translateDistroName = id => {
     switch (id) {
@@ -52,29 +49,6 @@ window.addEventListener('hashchange', () => {
     activeTextboxId = locationId;
     document.getElementById(locationId).style.display = "block";
 });
-
-
-// Theme and display toggles
-// const showAllContainer = document.getElementById('switch-container');
-// const triggerShowAllChange = () => {
-//     if (showAllCheck.checked) {
-//         Array.prototype.forEach.call(distroSections, el => el.style.display = "block");
-//     } else {
-//         Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
-//         var locationId = window.location.hash.substring(1);
-//         if (locationId === "") locationId = "arch-linux";
-//         document.getElementById(locationId).style.display = "block";
-//     }
-// }
-
-// showAllContainer.onclick = () => {
-//     showAllCheck.checked = !showAllCheck.checked;
-//     triggerShowAllChange();
-// }
-
-// showAllCheck.onchange = () => {
-//     triggerShowAllChange();
-// }
 
 
 // Cookies

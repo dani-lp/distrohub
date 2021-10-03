@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-img:not([alt]) {
-  border: 5px solid red;
-}
-
 :root {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
