@@ -55,3 +55,11 @@ window.onload = () => {
             data.forEach(tip => appendNewTip(tip.author, tip.content));
         });
 }
+
+// Twitter switch
+const switchContainer = document.getElementById('switch-container');
+const switchCheck = document.getElementById('switch-check');
+
+switchContainer.onclick = () => {
+    switchCheck.checked = !switchCheck.checked;
+}

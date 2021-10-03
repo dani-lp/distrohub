@@ -1,32 +1,4 @@
-// Imports
-
-
-// General
-const translateDistroName = id => {
-    switch (id) {
-        case 'arch-linux':
-            return 'Arch Linux';
-        case 'debian':
-            return 'Debian';
-        case 'fedora':
-            return 'Fedora';
-        case 'gentoo':
-            return 'Gentoo';
-        case 'kali-linux':
-            return 'Kali Linux';
-        case 'manjaro':
-            return 'Manjaro';
-        case 'linux-mint':
-            return 'Linux Mint';
-        case 'opensuse':
-            return 'OpenSUSE';
-        case 'raspbian':
-            return 'Raspbian';
-        case 'ubuntu':
-            return 'Ubuntu';
-    }
-}
-
+// Theme change
 const themeButton = document.getElementById('theme-button');
 const body = document.body;
 var isDark = true;
@@ -55,7 +27,7 @@ themeButton.onclick = () => {
             </svg>`
 
     isDark = !isDark;
-    
+
     showHeaderOnScroll();
 }
 
@@ -75,37 +47,3 @@ var showHeaderOnScroll = () => {
 };
 
 window.addEventListener("scroll", showHeaderOnScroll);
-
-
-// Cookies
-const setVoted = () => {
-    const d = new Date();
-    d.setTime(d.getTime() + 86400000);  // Set cookie timeout on one day (allow voting once per day)
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = "voted=true;" + expires + ";path=/";
-}
-
-const hasVoted = () => {
-    let hasVoted = getCookie("voted");
-    return hasVoted != "";
-}
-
-
-// API requests
-const getAllVotes = async () => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/distros`);
-}
-
-const getVotes = async distro => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`);
-}
-
-const addVote = async distro => {
-    fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
-        method: 'PUT',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    });
-}
