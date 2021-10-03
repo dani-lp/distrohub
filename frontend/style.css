@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 :root {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
@@ -956,6 +957,66 @@ footer svg:hover {
   text-decoration: none;
 }
 
+.bmc-btn {
+  min-width: 210px;
+  color: #000000;
+  background-color: #8fbcbb;
+  height: 60px;
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: Normal;
+  border: none;
+  padding: 0px 24px;
+  line-height: 27px;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Cookie", cursive;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bmc-btn svg {
+  height: 32px;
+  margin-bottom: 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  vertical-align: middle;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.bmc-btn:hover,
+.bmc-btn:active,
+.bmc-btn:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bmc-btn-text {
+  margin-left: 8px;
+  display: inline-block;
+  line-height: 0;
+  width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.logo-outline {
+  fill: #000000;
+}
+
+.logo-coffee {
+  fill: #ffdd00;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
@@ -1035,7 +1096,8 @@ footer svg:hover {
   .rice-el-img {
     max-width: 90vw;
   }
-  .comparison-title h2, .comparison-title p {
+  .comparison-title h2,
+  .comparison-title p {
     text-align: center;
   }
   .gif-container {
