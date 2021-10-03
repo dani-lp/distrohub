@@ -111,7 +111,7 @@ hr {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 2%;
+  margin: 0;
   width: 100%;
   max-width: 1450px;
 }
@@ -341,6 +341,7 @@ hr {
   border: none;
   border-radius: 5px;
   padding: 0;
+  margin-right: 20px;
   width: 40px;
   height: 40px;
 }
@@ -510,6 +511,19 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.gif-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.gif-container img {
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+  width: 100%;
+  max-width: 640px;
 }
 
 .carousel-container {
@@ -916,7 +930,7 @@ footer svg {
 }
 
 footer svg:hover {
-  stroke: var(--nord15);
+  stroke: var(--nord11);
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
 }
@@ -991,6 +1005,9 @@ footer svg:hover {
   #header-text {
     display: none;
   }
+  .page-link {
+    margin: 0 1px;
+  }
   main {
     margin-left: 0;
   }
@@ -1020,6 +1037,12 @@ footer svg:hover {
   }
   .comparison-title h2, .comparison-title p {
     text-align: center;
+  }
+  .gif-container {
+    display: initial;
+  }
+  .slide-container {
+    display: none;
   }
 }
 

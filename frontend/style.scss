@@ -125,7 +125,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 2%;
+    margin: 0;
 
     width: 100%;
     max-width: 1450px;
@@ -299,6 +299,7 @@ hr {
     border: none;
     border-radius: 5px;
     padding: 0;
+    margin-right: 20px;
     width: 40px;
     height: 40px;
 
@@ -409,6 +410,17 @@ hr {
 
 .slide-container {
     @include flex-center;
+}
+
+.gif-container {
+    display: none;
+    margin-top: 20px;
+    
+    img {
+        @include content-container;
+        width: 100%;
+        max-width: 640px;
+    }
 }
 
 .carousel-container {
@@ -698,7 +710,7 @@ footer {
         transition: stroke 200ms ease, transform 400ms ease;
 
         &:hover {
-            stroke: var(--nord15);
+            stroke: var(--nord11);
             transform: translateY(-5px);
         }
     }
@@ -773,6 +785,10 @@ footer {
         display: none;
     }
 
+    .page-link {
+        margin: 0 1px;
+    }
+
     main {
         margin-left: 0;
     }
@@ -807,6 +823,14 @@ footer {
         h2, p {
             text-align: center;
         }
+    }
+
+    .gif-container {
+        display: initial;
+    }
+
+    .slide-container {
+        display: none;
     }
 }
 
