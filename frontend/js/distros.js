@@ -32,45 +32,49 @@ const translateButtonId = id => {
 }
 
 
+// Hover to top on distro change
+const navbarLinks = document.getElementsByClassName('navbar-link');
+Array.prototype.forEach.call(navbarLinks, link => {
+    link.addEventListener('click', () => window.scrollTo(0, 0));
+});
+
+
 // Show only requested content
 const distroSections = document.getElementsByClassName('content-box');
-const showAllCheck = document.getElementById('show-all-check');
 Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
 var activeTextboxId = distroSections[0].id;
 distroSections[0].style.display = "block";
 
 window.addEventListener('hashchange', () => {
-    if (!showAllCheck.checked) {
-        var locationId = window.location.hash.substring(1);
-        if (locationId === "") locationId = "arch-linux";
-        document.getElementById(activeTextboxId).style.display = "none";
-        activeTextboxId = locationId;
-        document.getElementById(locationId).style.display = "block";
-    }
+    var locationId = window.location.hash.substring(1);
+    if (locationId === "") locationId = "arch-linux";
+    document.getElementById(activeTextboxId).style.display = "none";
+    activeTextboxId = locationId;
+    document.getElementById(locationId).style.display = "block";
 });
 
 
 // Theme and display toggles
-const showAllContainer = document.getElementById('switch-container');
-const triggerShowAllChange = () => {
-    if (showAllCheck.checked) {
-        Array.prototype.forEach.call(distroSections, el => el.style.display = "block");
-    } else {
-        Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
-        var locationId = window.location.hash.substring(1);
-        if (locationId === "") locationId = "arch-linux";
-        document.getElementById(locationId).style.display = "block";
-    }
-}
+// const showAllContainer = document.getElementById('switch-container');
+// const triggerShowAllChange = () => {
+//     if (showAllCheck.checked) {
+//         Array.prototype.forEach.call(distroSections, el => el.style.display = "block");
+//     } else {
+//         Array.prototype.forEach.call(distroSections, el => el.style.display = "none");
+//         var locationId = window.location.hash.substring(1);
+//         if (locationId === "") locationId = "arch-linux";
+//         document.getElementById(locationId).style.display = "block";
+//     }
+// }
 
-showAllContainer.onclick = () => {
-    showAllCheck.checked = !showAllCheck.checked;
-    triggerShowAllChange();
-}
+// showAllContainer.onclick = () => {
+//     showAllCheck.checked = !showAllCheck.checked;
+//     triggerShowAllChange();
+// }
 
-showAllCheck.onchange = () => {
-    triggerShowAllChange();
-}
+// showAllCheck.onchange = () => {
+//     triggerShowAllChange();
+// }
 
 
 const themeButton = document.getElementById('theme-button');
