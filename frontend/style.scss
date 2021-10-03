@@ -58,8 +58,8 @@ $max-page-width: 1500px;
 
 .light {
     --bg: var(--nord4);
-    --bg-nav: var(--nord6);
-    --bg-nav-hover: var(--nord5);
+    --bg-nav: var(--nord5);
+    --bg-nav-hover: var(--nord6);
     --bg-logo: var(--nord8);
     --bg-alt: var(--nord1);
     --text: var(--nord0);
@@ -628,7 +628,7 @@ hr {
         width: 100%;
 
         &:hover {
-            background: var(--bg-nav-hover);
+            background: var(--bg-nav);
         }
     }
 
@@ -757,7 +757,6 @@ footer {
         }
 
         &:hover {
-            background-color: var(--bg-nav-hover);
             border-left: none;
 
             .distro-img {

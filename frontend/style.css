@@ -23,8 +23,8 @@
 
 .light {
   --bg: var(--nord4);
-  --bg-nav: var(--nord6);
-  --bg-nav-hover: var(--nord5);
+  --bg-nav: var(--nord5);
+  --bg-nav-hover: var(--nord6);
   --bg-logo: var(--nord8);
   --bg-alt: var(--nord1);
   --text: var(--nord0);
@@ -817,7 +817,7 @@ hr {
 }
 
 .tips-form .switch-container:hover {
-  background: var(--bg-nav-hover);
+  background: var(--bg-nav);
 }
 
 .tips-form input[type="submit"] {
@@ -980,7 +980,6 @@ footer svg:hover {
     margin-left: 0;
   }
   .navbar-link:hover {
-    background-color: var(--bg-nav-hover);
     border-left: none;
   }
   .navbar-link:hover .distro-img {
