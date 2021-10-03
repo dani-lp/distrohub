@@ -15,7 +15,7 @@ const addTip = async (author, content) => {
 }
 
 // Tips container
-const tipsContainer = document.getElementsByClassName('tips-container')[0];
+const tipsContainer = document.getElementsByClassName('tips-grid')[0];
 const form = document.getElementsByClassName('tips-form')[0];
 
 const appendNewTip = (author, content) => {
