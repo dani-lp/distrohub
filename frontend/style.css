@@ -319,8 +319,8 @@ hr {
 .text-box a {
   color: var(--link);
   text-decoration: none;
-  -webkit-transition: color 1000ms ease-in-out;
-  transition: color 1000ms ease-in-out;
+  -webkit-transition: color 1000ms ease-in-out, opacity 400ms ease;
+  transition: color 1000ms ease-in-out, opacity 400ms ease;
 }
 
 .theme-container {
@@ -485,8 +485,8 @@ hr {
 .rice-el-text a {
   color: var(--link);
   text-decoration: none;
-  -webkit-transition: color 1000ms ease-in-out;
-  transition: color 1000ms ease-in-out;
+  -webkit-transition: color 1000ms ease-in-out, opacity 400ms ease;
+  transition: color 1000ms ease-in-out, opacity 400ms ease;
 }
 
 .rice-el-text h2 {
@@ -950,6 +950,29 @@ footer svg:hover {
   stroke: var(--nord11);
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
+}
+
+footer a {
+  color: var(--link);
+  text-decoration: none;
+  -webkit-transition: color 1000ms ease-in-out, opacity 400ms ease;
+  transition: color 1000ms ease-in-out, opacity 400ms ease;
+}
+
+footer .footer-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contact-row {

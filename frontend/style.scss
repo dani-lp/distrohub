@@ -34,6 +34,12 @@ $max-page-width: 1500px;
     }
 }
 
+@mixin text-link {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 1000ms ease-in-out, opacity 400ms ease;
+}
+
 :root {
     font-size: 16px;
     font-family: "Rubik", sans-serif;
@@ -142,9 +148,7 @@ hr {
     a {
         display: flex;
         align-items: center;
-        color: var(--link);
-        text-decoration: none;
-        transition: color 1000ms ease-in-out, opacity 400ms ease;
+        @include text-link;
     }
 
     &:hover {
@@ -280,9 +284,7 @@ hr {
     line-height: 1.7rem;
 
     a {
-        color: var(--link);
-        text-decoration: none;
-        transition: color 1000ms ease-in-out;
+        @include text-link;
     }
 }
 
@@ -392,9 +394,7 @@ hr {
     line-height: 1.7rem;
 
     a {
-        color: var(--link);
-        text-decoration: none;
-        transition: color 1000ms ease-in-out;
+        @include text-link;
     }
 
     h2 {
@@ -725,6 +725,15 @@ footer {
             stroke: var(--nord11);
             transform: translateY(-5px);
         }
+    }
+
+    a {
+        @include text-link;
+    }
+
+    .footer-text {
+        @include flex-center;
+        flex-direction: column;
     }
 }
 
