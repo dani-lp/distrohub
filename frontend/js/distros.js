@@ -29,6 +29,17 @@ const translateButtonId = id => {
 }
 
 
+// Footer bottom margin on distros page
+const footer = document.querySelector('footer');
+const changeFooterMargin = () => {
+    footer.style.marginBottom = window.innerWidth <= 600
+        ? "5rem"
+        : 0;
+}
+window.onresize = changeFooterMargin;
+changeFooterMargin();
+
+
 // Hover to top on distro change
 const navbarLinks = document.getElementsByClassName('navbar-link');
 Array.prototype.forEach.call(navbarLinks, link => {

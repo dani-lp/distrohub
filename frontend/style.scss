@@ -859,13 +859,17 @@ footer {
     }
 
     footer {
-        margin-bottom: 5rem;
+        // margin-bottom: 5rem;
     }
 }
 
 @media only screen and (max-width: 850px) {
     .row-to-column {
         flex-direction: column;
+    }
+
+    .rice-el-container:nth-child(even) {
+        flex-direction: column-reverse;
     }
 
     .rice-el-img {
