@@ -30,14 +30,25 @@ const translateButtonId = id => {
 
 
 // Footer bottom margin on distros page
+const main = document.querySelector('main');
 const footer = document.querySelector('footer');
-const changeFooterMargin = () => {
-    footer.style.marginBottom = window.innerWidth <= 600
-        ? "5rem"
-        : 0;
+const changeDistrosMargin = () => {
+    if (window.innerWidth <= 1650) {
+        main.style.marginLeft = "5rem";
+    } else {
+        main.style.marginLeft = "0";
+    }
+
+    if (window.innerWidth <= 600) {
+        main.style.marginLeft = "0";
+        footer.style.marginBottom = "5rem";
+    } else {
+        footer.style.marginBottom = "0";
+    }
 }
-window.onresize = changeFooterMargin;
-changeFooterMargin();
+
+window.onresize = changeDistrosMargin;
+changeDistrosMargin();
 
 
 // Hover to top on distro change
