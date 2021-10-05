@@ -277,10 +277,20 @@ hr {
     }
 }
 
-.text-box {
+.distro-info {
     @include content-container;
+    @include flex-center;
+    flex-direction: column;
     background-color: var(--text-alt);
-    margin: 1rem;
+}
+
+.distro-button {
+    @include std-button;
+    text-align: center;
+    max-width: 150px;
+}
+
+.text-box {
     padding: 0.1rem 1rem;
     line-height: 1.7rem;
 
