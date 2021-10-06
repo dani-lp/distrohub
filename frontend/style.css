@@ -372,6 +372,52 @@ hr {
   transition: color 1000ms ease-in-out, opacity 400ms ease;
 }
 
+.diff-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
+}
+
+.diff-container .text-box {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.diff-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  width: 25rem;
+  max-width: 95vw;
+}
+
+.diff-title h2 {
+  margin: 0.5rem 0;
+  font-size: 30px;
+}
+
+.diff-title p {
+  font-size: 19px;
+  text-align: right;
+}
+
 .theme-container {
   margin: 0.8rem;
   margin: 0;
