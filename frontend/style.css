@@ -488,11 +488,13 @@ hr {
 }
 
 .tux-img {
-  width: 200px;
-  margin: 3rem;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+  width: 200px;
+  margin: 3rem;
+  -webkit-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
 }
 
 .rice-el-container {
@@ -633,6 +635,11 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100vw;
+  background-color: var(--text-alt);
+  -webkit-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
+  padding: 30px 0;
 }
 
 .comparison-title {
@@ -665,6 +672,7 @@ hr {
 .table-container {
   overflow-x: auto;
   max-width: 90vw;
+  border: 1px solid var(--text);
 }
 
 .comparison-table {
@@ -676,7 +684,7 @@ hr {
 .comparison-table th {
   text-align: left;
   border-bottom: 1px solid var(--bg-alt);
-  background-color: var(--text-alt);
+  background-color: var(--bg-nav-hover);
   line-height: 2rem;
   padding: 0.5rem;
   -webkit-transition: border-color 500ms ease-in-out;
@@ -692,7 +700,7 @@ hr {
 }
 
 .comparison-table tbody tr:nth-child(even) {
-  background-color: var(--text-alt);
+  background-color: var(--bg-nav-hover);
 }
 
 .comparison-table tbody tr:nth-child(odd) {

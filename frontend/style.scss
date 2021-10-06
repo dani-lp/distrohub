@@ -385,9 +385,10 @@ hr {
 }
 
 .tux-img {
+    @include content-container;
     width: 200px;
     margin: 3rem;
-    @include content-container;
+    transition: background-color 500ms ease-in-out;
 }
 
 .rice-el-container {
@@ -478,6 +479,10 @@ hr {
 
 .comparison-container {
     @include flex-center;
+    width: 100vw;
+    background-color: var(--text-alt);
+    transition: background-color 500ms ease-in-out;
+    padding: 30px 0;
 }
 
 .comparison-title {
@@ -501,6 +506,7 @@ hr {
 .table-container {
     overflow-x: auto;
     max-width: 90vw;
+    border: 1px solid var(--text);
 }
 
 .comparison-table {
@@ -511,7 +517,7 @@ hr {
     th {
         text-align: left;
         border-bottom: 1px solid var(--bg-alt);
-        background-color: var(--text-alt);
+        background-color: var(--bg-nav-hover);
         line-height: 2rem;
         padding: 0.5rem;
         transition: border-color 500ms ease-in-out;
@@ -527,7 +533,7 @@ hr {
         }
 
         tr:nth-child(even) {
-            background-color: var(--text-alt);
+            background-color: var(--bg-nav-hover);
         }
 
         tr:nth-child(odd) {

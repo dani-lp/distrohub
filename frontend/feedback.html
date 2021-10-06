@@ -16,7 +16,7 @@
 <body class="dark">
     <header id="header">
         <div class="header-container">
-            <div class="links-container">
+            <nav class="links-container">
                 <div class="logo-container">
                     <a href="index.html">
                         <img class="header-logo" src="icons/128_linux.png" alt="header-logo">
@@ -26,7 +26,7 @@
                 <a href="distros.html" class="page-link">Distros</a>
                 <a href="ricing.html" class="page-link">Ricing</a>
                 <a href="tips.html" class="page-link">Tips</a>
-            </div>
+            </nav>
 
             <div class="theme-container">
                 <button id="theme-button" aria-label="Change theme">
@@ -57,8 +57,8 @@
                     <label for="comments">Comments</label>
                     <textarea name="comments" id="comments" maxlength="1000"></textarea>
     
-                    <label for="">Experience</label>    <!--TODO: improve this-->
-                    <div class="exp-container">
+                    <label for="exp-container">Experience</label>    <!--TODO: improve this-->
+                    <div class="exp-container" id="exp-container">
                         <input type="radio" name="experience" id="low-exp" value="low">
                         <label for="low-exp">Zero/little</label>
                         <input type="radio" name="experience" id="mid-exp" value="mid">
