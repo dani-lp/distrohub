@@ -1,10 +1,10 @@
 // API
 const getAllTips = async () => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/tips`);
+    return await fetch(`https://distrohub.herokuapp.com/api/tips`);
 }
 
 const addTip = async (author, content) => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/tips`, {
+    return await fetch(`https://distrohub.herokuapp.com/api/tips`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

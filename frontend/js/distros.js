@@ -99,15 +99,15 @@ const hasVoted = () => {
 
 // API requests
 const getAllVotes = async () => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/distros`);
+    return await fetch(`https://distrohub.herokuapp.com/api/distros`);
 }
 
 const getVotes = async distro => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`);
+    return await fetch(`https://distrohub.herokuapp.com/api/distros/${distro}`);
 }
 
 const addVote = async distro => {
-    return await fetch(`${"http://127.0.0.1:3001"}/api/distros/${distro}`, {
+    return await fetch(`https://distrohub.herokuapp.com/api/distros/${distro}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
