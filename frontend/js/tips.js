@@ -53,6 +53,7 @@ window.onload = () => {
             }
         }).then(data => {
             data.forEach(tip => appendNewTip(tip.author, tip.content));
+            document.getElementsByClassName('loader')[0].style.display = "none";
         });
 }
 

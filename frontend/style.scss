@@ -975,6 +975,14 @@ footer {
     }
 }
 
+.loader {
+    @include flex-center;
+    
+    path {
+        fill: var(--link);
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .navbar {
         bottom: 0;

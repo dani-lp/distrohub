@@ -147,56 +147,59 @@ const translateVotes = async () => {
 var voteChart = null;
 
 const loadChartData = () => {
-    translateVotes().then(data => {
-        var ctx = document.getElementById('vote-chart');
-        voteChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: data[0],
-                datasets: [{
-                    label: 'Number of votes',
-                    data: data[1],
-                    backgroundColor: [
-                        'rgba(191, 97, 106, 0.2)',
-                        'rgba(129, 161, 193, 0.2)',
-                        'rgba(235, 203, 139, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(180, 142, 173, 0.2)',
-                        'rgba(163, 190, 140, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(191, 97, 106, 1)',
-                        'rgba(129, 161, 193, 1)',
-                        'rgba(235, 203, 139, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(180, 142, 173, 1)',
-                        'rgba(163, 190, 140, 1)'
-                    ],
-                    hoverBackgroundColor: [
-                        'rgba(191, 97, 106, 0.8)',
-                        'rgba(129, 161, 193, 0.8)',
-                        'rgba(235, 203, 139, 0.8)',
-                        'rgba(75, 192, 192, 0.8)',
-                        'rgba(180, 142, 173, 0.8)',
-                        'rgba(163, 190, 140, 0.8)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+    translateVotes()
+        .then(data => {
+            var ctx = document.getElementById('vote-chart');
+            voteChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data[0],
+                    datasets: [{
+                        label: 'Number of votes',
+                        data: data[1],
+                        backgroundColor: [
+                            'rgba(191, 97, 106, 0.2)',
+                            'rgba(129, 161, 193, 0.2)',
+                            'rgba(235, 203, 139, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(180, 142, 173, 0.2)',
+                            'rgba(163, 190, 140, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(191, 97, 106, 1)',
+                            'rgba(129, 161, 193, 1)',
+                            'rgba(235, 203, 139, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(180, 142, 173, 1)',
+                            'rgba(163, 190, 140, 1)'
+                        ],
+                        hoverBackgroundColor: [
+                            'rgba(191, 97, 106, 0.8)',
+                            'rgba(129, 161, 193, 0.8)',
+                            'rgba(235, 203, 139, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(180, 142, 173, 0.8)',
+                            'rgba(163, 190, 140, 0.8)'
+                        ],
+                        borderWidth: 1
+                    }]
                 },
-                plugins: {
-                    legend: {
-                        onClick: (e) => e.stopPropagation()
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            onClick: (e) => e.stopPropagation()
+                        }
                     }
                 }
-            }
+            });
+
+            document.getElementsByClassName('loader')[0].style.display = "none";
         });
-    });
 }
 
 loadChartData();
