@@ -99,11 +99,11 @@ body {
 }
 
 header {
+    @include flex-center;
     position: fixed;
     width: 100%;
     top: 0;
     padding: 0.5rem;
-    @include flex-center;
     z-index: 10;
 
     transition: background-color 400ms ease-in-out;
@@ -308,6 +308,7 @@ hr {
 .diff-container {
     @include flex-center;
     padding: 30px 0;
+    max-width: 90vw;
 
     .text-box {
         width: 100%;
@@ -326,6 +327,7 @@ hr {
     h2 {
         margin: 0.5rem 0;
         font-size: 30px;
+        text-align: right;
     }
 
     p {
@@ -1084,6 +1086,18 @@ footer {
 
     .slide-container {
         display: none;
+    }
+
+    .diff-container {
+        flex-direction: column-reverse;
+    }
+
+    .diff-title {
+        align-items: center;
+        
+        h2, p {
+            text-align: center;
+        }
     }
 }
 
