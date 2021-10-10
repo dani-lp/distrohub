@@ -27,10 +27,11 @@ $max-page-width: 1500px;
     text-decoration: none;
 
     cursor: pointer;
-    transition: color 300ms ease;
+    transition: 300ms ease;
 
     &:hover {
-        color: var(--link);
+        color: var(--text-alt);
+        background-color: var(--link);
     }
 }
 
@@ -405,6 +406,7 @@ hr {
 
         &:hover {
             color: var(--bg-alt);
+            background-color: transparent;
 
             &::before {
                 opacity: 1;
@@ -1043,15 +1045,7 @@ footer {
         margin-left: 0;
     }
 
-    .content-box {
-        margin: 0;
-    }
-
-    .page-info {
-        margin: 0;
-    }
-
-    .text-box {
+    .content-box, .page-info, .text-box {
         margin: 0;
     }
 
@@ -1065,7 +1059,7 @@ footer {
         flex-direction: column;
     }
 
-    .rice-el-container:nth-child(even) {
+    .rice-el-container:nth-child(even), .diff-container {
         flex-direction: column-reverse;
     }
 
@@ -1086,10 +1080,6 @@ footer {
 
     .slide-container {
         display: none;
-    }
-
-    .diff-container {
-        flex-direction: column-reverse;
     }
 
     .diff-title {
