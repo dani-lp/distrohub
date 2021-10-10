@@ -261,12 +261,6 @@ hr {
     width: calc(100% - 3px);
 }
 
-.data-container {
-    @include flex-center;
-    flex-direction: column;
-    width: 100%;
-}
-
 .page-info {
     width: 100%;
     max-width: $max-page-width;
