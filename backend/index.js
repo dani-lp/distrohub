@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose')
 const Distro = require('./models/distro');
 const Tip = require('./models/tip');
+const path = require('path');
 
 const app = express();
 
@@ -21,6 +22,7 @@ mongoose.connect(url)
 // Middleware and handlers
 app.use(express.json());
 app.use(cors());
+app.use(express.static(__dirname + '/public'));
 
 const unknownEndpoint = (request, response) => {
     response.status(404).send({ error: 'unknown endpoint' });
@@ -40,6 +42,26 @@ const errorHandler = (error, request, response, next) => {
 
 
 // Routes
+app.get('/', (request, response) => {
+    response.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get('/distros', (request, response) => {
+    response.sendFile(path.join(__dirname, '/public/distros.html'));
+});
+
+app.get('/ricing', (request, response) => {
+    response.sendFile(path.join(__dirname, '/public/ricing.html'));
+});
+
+app.get('/tips', (request, response) => {
+    response.sendFile(path.join(__dirname, '/public/tips.html'));
+});
+
+app.get('/feedback', (request, response) => {
+    response.sendFile(path.join(__dirname, '/public/feedback.html'));
+});
+
 app.get('/api/distros', (request, response) => {
     Distro.find({}).then(distros => {
         response.json(distros);
